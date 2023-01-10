@@ -5,7 +5,6 @@
 ### Visual Studio Code
 
 - Installerad sen tidigare.
-
 ### Node.js
 
 - Ladda ner och installera [Node](https://nodejs.org/en/) (LTS).

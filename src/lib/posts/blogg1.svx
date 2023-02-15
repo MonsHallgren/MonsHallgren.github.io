@@ -1,0 +1,74 @@
+---
+title: Det första arbetet med hemsidan
+
+---
+
+
+
+
+<h3>Måns:</h3>
+<div style='margin:20px' >
+<p>
+Under dagens lektion så har jag börjat med att andra på formen på clickern och jag har också tagit bort bakgrundsbilderna och ersatt det med enbart färg.
+Jag har också ändrat så ju fler boosters man köper desto dyrare blir dem, samt sett hur man kan ändra hastigheten på workers.
+Jag har även gjort några av lektionerna för att lära sig svelte. 
+</p>
+</div>
+
+<style> 
+p {
+    color: black;
+    font-family: 'Times New Roman' , cursive;
+    font-size: 1em;
+
+
+}
+</style>
+```css
+  .upgrade {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(203, 219, 252);
+    background-size: cover;
+    place-items: center;
+    place-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .worker {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-color: rgb(241, 187, 223);
+    place-items: center;
+    place-content: center;
+    display: flex;
+  }
+```
+```js
+ if (clicks >= upgrade.cost) {
+              if (upgrade.multiplier) {
+                multiplier = multiplier * upgrade.multiplier;
+                upgrade.cost *= 2
+                clicks -= upgrade.cost;
+              }
+              if (upgrade.worker && clicks) {
+                worker_multiplier = worker_multiplier + 2;
+                workers = [upgrade.name, ...workers];
+                /* start "clicking" every 1000 ms */
+                setInterval(increment, 1000);
+                clicks -= upgrade.cost;
+              }
+            } else {
+              alert("Not enough clicks");
+            }
+```
+
+<a href="/devblog/blogg2" 
+  style='color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;'>
+        <button>Nästa Blogg</button>
+</a>

@@ -23,6 +23,24 @@ const config = {
 			assets: 'docs',
 		})
 	},
+	vitePlugin: {
+		experimental: {
+	
+			inspector: {
+	
+				toggleKeyCombo: 'meta-shift',
+	
+				holdMode: true,
+	
+				showToggleButton: 'always',
+	
+				toggleButtonPos: 'bottom-right'
+	
+			}
+	
+		}
+	
+	},
 	extensions: ['.svelte', '.md', '.svx'],
 	remarkPlugins: [
 		[

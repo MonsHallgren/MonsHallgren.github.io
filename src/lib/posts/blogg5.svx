@@ -1,0 +1,242 @@
+---
+title: Det femte arbetet med hemsidan
+
+---
+
+<h3>Måns</h3>
+
+
+
+<div class="flex-container">
+ 
+  
+  <div class="flex-item-left">
+      <p>
+      Varjegång man  klickade på worker skapades en ny rektangel där det stod worker där nere på hemsidan.  Jag tänkte att det skulle vara roligt att byta ut 
+      rektanglarna till riktiga bilder på arbetare. Jag googlade lite, hittade och sparade denna bild för jag tyckte att det passade bra.
+      </p>
+  </div>
+  <div class="flex-item-right">
+  <img src="https://i.ibb.co/q5bf7wm/minerpng.png" alt="minerpng" >
+  </div>
+</div>
+
+<p style='margin-top:15px; text-align:justify;'>Sedan kollade jag igenom koden och försökte hitta hur de där regtanglarna skapades. I koden så fanns det en lista som hette
+<code style='color:#000;'>workers</code> och när man klickade på worker knappen så lades till en till sträng, "worker", till listan. och sedan gick man genom workers listan skev ut dem på websidan och sedan lade till till lite css och gjorde dem till färgade rektanglar.</p>
+<div class='box-style'>
+Här ser vi det relavanta kodblocken i den originella koden.
+
+```js
+
+  <script>
+    /* definerar en tom lista */
+    let workers = [];
+    let upgrades = [
+      { cost: 15, name: "Doubler", multiplier: 2, worker: 0 },
+      { cost: 5, name: "Worker", multiplier: 0, worker: 1 },];
+  </script>
+
+  <button class="upgrade" on:click={() => {
+          /*om upgrade.worker inte är 0 {om man klickar på worker} */
+           if (upgrade.worker) {
+            /* upgrade.name vilket är "worker" läggs till workers listan */
+            workers = [upgrade.name, ...workers];}}}> 
+            
+            /*namn och kostnad på knapparna */
+            <span>{upgrade.name}</span>
+            <span>{upgrade.cost}</span>
+      </button>
+      <div>
+        <span>Workers</span>
+        <hr />
+        <div class="shop">
+        /*returnera varje item i workers listan som worker */
+          {#each workers as worker}
+          /*skriv innehållet av worker variablet */
+            <div class="worker">{worker}</div>
+          {/each}
+       </div>
+```  
+```css
+  .shop {
+      display: grid;
+      grid-auto-flow: row; /* default */
+      gap: 8px;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+   .worker {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-color: rgb(128, 141, 27);
+    place-items: center;
+    place-content: center;
+    display: flex;
+  }
+
+```
+
+Vilket leder till : 
+<img src="https://i.ibb.co/YPsByjf/Capture.png" alt="Capture" border="0" width="100%">
+
+</div>
+
+<p>För att fixa det tänkte jag att jag skulle kunna skapa en till lista  istället för 
+<code style='color:#000;'>let workers = []</code> och istället för <code style='color:#000;'>upgrade.name</code> skapa typ en <code style='color:#000;'>upgrade.url</code>
+och sedan lägga till bildadressen till listan , gå igenom den och rita bilderna och sedan styla det med css. Detta krävde  förändringar i koden. </p>
+
+```js
+
+  <script>
+    /* definerar en tom lista */
+    let pictures = [];
+    let upgrades = [
+      { cost: 15, name: "Doubler", multiplier: 2, worker: 0 },
+      { cost: 5, name: "Worker", multiplier: 0, worker: 1 , url: 'src\\routes\\img\\minerpng.png'},];
+  </script>
+
+  <button class="upgrade" on:click={() => {
+          /*om upgrade.worker inte är 0 {om man klickar på worker} */
+           if (upgrade.worker) {
+            /* upgrade.url vilket är adressen på bilden läggs till pictures listan */
+           pictures=[upgrade.url, ...pictures]}}}> 
+            
+            /*namn och kostnad på knapparna */
+            <span>{upgrade.name}</span>
+            <span>{upgrade.cost}</span>
+      </button>
+      <div>
+        <span>Workers</span>
+        <hr />
+        <div class="shop">
+        /*returnera varje item i pictures listan som picture */
+          {#each pictures as picture}
+          /*rita bilderna */
+            <div class="worker"><img src={picture} alt="worker" class="worker_img"></div>
+          {/each}
+       </div>
+```  
+```css
+  
+  .shop {
+    display: grid;
+    grid-auto-flow: row; /* default */
+    gap: 10px; /*Bestämmer avståndet mellan olika objekt*/
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    
+  }
+   
+  .worker {
+    margin-top: 10%; /* 10% margin uppifrån .worker */
+    width: 100%; /* 100% bredd (full length) */
+    height: 90%; /*90% höjd  av det riktiga höjden*/
+    border: transparent; /* Gör att kanterna är genomskinliga */
+    place-items: center;/* Gör så att bilden hamnar i mitten */
+    place-content: center; /* Gör så content är centrerad */
+    display: flex; 
+  }
+
+  .worker_img{
+    will-change: transform; 
+    transition: transform 450ms; /* bestämmer typen av animation och hur långt tid det tar */
+
+  }
+  .worker_img:hover{
+    transition: transform 125ms; /* bestämmer typen av animation och hur långt tid det tar */
+    transform: translateY(-10px); /*Gör så att clickern rör sig 10 pixlar uppåt*/ 
+  }
+
+
+```
+<p>Så ser resultet ut : </p>
+<img src="https://i.ibb.co/b2X7X2M/Capture.png" alt="Capture" border="0" width='100%'>
+
+
+
+<style> 
+    
+  p {
+      color: black;
+      font-family: 'Times New Roman';
+      font-style: italic;
+      font-size: 1em;
+      
+
+  }
+  .box-style{
+      background-color: #f0f7fb;
+      border: solid 1px #3498db;
+      border-radius: 6px;
+      line-height: 30px;
+      overflow: hidden;
+      padding: 15px 60px;
+      
+  }
+  .box-style p{
+    text-align: justify;
+    font-style: normal;
+  }
+
+  .video-wrapper{
+    padding: 10px;
+    flex: 50%;
+  }
+  .vid{
+  transform:  scale(1.1, 1.0);;
+  border-radius : 10px;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+    
+  }
+
+
+
+
+  .flex-item-left {
+    padding-right: 0;
+    padding-left: 0;
+    flex: 80%;
+    text-align: justify;
+
+  }
+
+  .flex-item-right {
+    padding-right: 0;
+    padding-left: 0;
+    flex: 20%;
+    text-align: center;
+  }
+  .flex-item-right img{
+    height:110%;
+    width:40%;
+
+  }
+
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }}
+
+
+</style>
+
+
+  
+
+
+
+
+
+
+
+<a href="/devblog/blogg6" 
+  style='color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;'>
+        <button>Nästa Blogg</button>
+</a>

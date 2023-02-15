@@ -1,0 +1,220 @@
+---
+title: Det fjärde arbetet med hemsidan
+
+---
+
+
+
+<style> 
+p {
+    color: #000;
+    font-family: 'Times New Roman' , cursive;
+    font-size: 1em;
+  
+
+
+}
+.div-style{
+    background-color: #f0f7fb;
+    border: solid 1px #3498db;
+     border-radius: 6px;
+     line-height: 30px;
+     overflow: hidden;
+     padding: 15px 60px;
+    
+
+     
+}
+#Hide-html,#Hide-css{
+  display:none;
+
+} #Hide-html,#Hide-css,#Show-html,#Show-css{
+  margin-bottom : 0;
+  flex:50%;
+  margin-left:1px;
+}
+
+
+
+
+</style>
+
+<h3>Reyhaneh</h3>
+
+<p>
+Jag ändrade nav-baret så att när man klickade på 'blogg' istället för att det skulle navigera till en ny sida visades länkarna till bloggen direkt på nav-baret.
+Detta gjorde jag genom att skapa två olika <code style='color:#000;'>&lt div&gt&lt/div&gt</code>. Ena div visade medans den andra var gömd tills man klickade på <a style='padding:0;'>blogg</a>.
+ Klicka på knappen nedan,för att se html koden för navbaret. kommentarer finns med. </p>
+<section style='display:flex; margin-bottom:0;'>
+    
+  <button id="Show-html" onclick="document.getElementById('Show-html').style.display='none';
+                                  document.getElementById('Hide-html').style.display='block'; 
+                                  document.getElementById('html-nav').style.display='block';
+                                  document.getElementById('Show-css').style.display='block'; 
+                                  document.getElementById('Hide-css').style.display='none'; 
+                                  document.getElementById('css-nav').style.display='none';
+                                  document.getElementById('Hide-html').style.backgroundColor='#096d9e';"> Visa HTML koden 
+                                  <i class="fa-solid fa-file-code"></i>
+</button>
+
+
+
+
+  <button id="Hide-html" onclick="document.getElementById('Hide-html').style.display='none';
+                                  document.getElementById('Show-html').style.display='block';
+                                  document.getElementById('html-nav').style.display='none';
+                                  document.getElementById('Show-css').style.display='block'; 
+                                  document.getElementById('Hide-css').style.display='none';"> gömma HTML koden
+                                  <i class="fa-solid fa-file-code"></i>
+  </button>
+
+
+
+  <button id="Show-css" onclick="document.getElementById('Show-css').style.display='none';
+                                document.getElementById('Hide-css').style.display='block';
+                                document.getElementById('css-nav').style.display='block'; 
+                                document.getElementById('Show-html').style.display='block';
+                                document.getElementById('Hide-html').style.display='none'; 
+                                document.getElementById('html-nav').style.display='none'
+                                document.getElementById('Hide-css').style.backgroundColor='#096d9e';"> Visa CSS koden
+                                <i class="fa-brands fa-css3-alt"></i>
+  </button>
+
+
+
+  <button id="Hide-css" onclick="document.getElementById('Hide-css').style.display='none';
+                                document.getElementById('Show-css').style.display='block';
+                                document.getElementById('css-nav').style.display='none'; 
+                                document.getElementById('Show-html').style.display='block'; 
+                                document.getElementById('Hide-css').style.display='none';"> gömma CSS koden
+                                <i class="fa-brands fa-css3-alt"></i>
+  </button>
+
+</section>
+<div id='html-nav' class ='div-style' style='display=none;margin-top:0; display:none;'>
+
+
+```html
+  <!--här har jag skapat en navbar-->
+  <nav>
+  <!--i {.nav-container} har jag skapat två olike div-->
+  <div class="nav_container">
+    <!--här finns det den ena div som visas från början och består av {hem} och {blogg}-->
+    <div id="div-sec">
+      <!--länken hem leder användern till första sidan #main delen -->
+      <a id="homepage" href="/#main"  class="linkstyle">Hem</a>
+      <!--länken {Blogg} leder oss till den div som har #blogg_nav som id vilket är i vår andra div som är definerad.-->
+      <a id="homepage" href="#blogg_nav"  class="linkstyle">Blogg</a>
+    </div>
+    <!--vår andra div, denna div kommer vara gömd by default-->
+    <div id="div-sec">
+      <!--här har vi länkarna för att navigera mellan bloggar (1,2,3 osv) och vår *homepage* -->
+      <a id="blogg_nav" href="/#homepage"  class="linkstyle">Back</a>
+      <a href="/devblog/blogg1" class="linkstyle">Blogg 1</a>
+      <a href="/devblog/blogg2" class="linkstyle">Blogg 2</a>
+      <a href="/devblog/blogg3" class="linkstyle">Blogg 3</a>
+      <a href="/devblog/blogg4" class="linkstyle">Blogg 4</a>
+      <a href="/devblog/blogg5" class="linkstyle">Blogg 5</a>
+      <a href="/devblog/blogg6" class="linkstyle">Blogg 6</a>
+    </div>
+  </div>
+</nav>
+```
+<p style='margin-left:20px; margin-bottom:5px; margin-top:15px;'>html koden ensamt ledde till något sånt </p>
+<img src="https://i.ibb.co/NKg6wtx/Capture.png" alt="visar nav baret utan styling" border="0">
+
+</div>
+
+<div id='css-nav' class ='div-style' style='display=none;margin-top:0; display:none;'>
+
+```css
+
+    nav {
+      /*sätt en bakgrundfärg*/
+      background-color:#0f032a; 
+      /*döljer den delen som inte ryms i container*/
+      overflow:hidden;
+      /*smooth scrolling effect*/
+      scroll-behavior:smooth;
+    }
+    /* sätt en höjd för .nav-container */
+    .nav_container {
+        height:calc(3em + 4px); /* calc() tillåter oss att göra beräkningar mellan olika enheter */
+        }
+    /* sätt padding och width för #div-sec */
+    #div-sec {
+          padding:calc(1em + 2px);
+          width:100vw;
+           }
+```
+<p style=' margin-bottom:0;margin-left:20px; margin-bottom:5px; margin-top:15px;' >Så ser resultet ut med html och css </p>
+<div style="width:100%;height:0;padding-bottom:24%;position:relative; margin-bottom:0;">
+<iframe src="https://giphy.com/embed/e9J5MJHWWs3A6iDGzT" width="100%" height="100%" style="position:absolute; margin-bottom:0; border-radius:5px;" class='gif-nav' frameBorder="0"  allowFullScreen></iframe>
+</div>
+</div>
+
+
+<p style='margin-top:20px; margin-bottom:20px;'>För att göra länkarna ännu finare , bytte jag färg på dem , gav dem lite margin , ändrade font-storleken lite grann och gav dem en fin hover effect.</p>
+
+<div class='div-style'>
+<em style='font-size:18px;'>Här ser man hur jag gav style till länkarna. Jag har skrivit kommentarer som förklarar det som har gjorts utförligare.</em>
+
+```css
+    .linkstyle{
+      /*text färg*/
+      color: white;
+      /*addera space på högra sidan av länkar*/
+      margin-right: 1%;
+      /*addera space under länkar */
+      margin-bottom: 1%;
+      /*sätt font storlek*/
+      font-size: 100%;
+      /*underline ska tas bort från under länkarna */
+      text-decoration: none;
+      }
+
+
+  /*sätter grejer innanför .linkstyle*/
+  .linkstyle::before{
+    /*en tom grej ska läggs till innanför länken */
+    content: ""; 
+    /*tomma grejen kommer visas som en block element  */
+    display: block;
+    /*sätt position style*/
+    position: relative;
+    /* sätt bredd för den tomma grejen */
+    width: 100%;
+    /*sätt höjd för den tomma grejen*/
+    height: 2px;
+    /*vit färg för den tomma blocken*/
+    background-color: #fff;
+    /*tomma blockens storlek kommer bli 0 av dess verkliga storlek det kommer alltså inte synas*/
+    transform: scaleX(0);
+    /*hastighet och style för transform effektet*/
+    transition: transform 0.5s ease;
+    }
+    
+
+  /*när musen är på länkarna ... */
+  .linkstyle:hover::before {
+    /*storlek av blocken kommer vara 100% av dess verkliga storlek det kommer altså synas */
+    transform: scaleX(1);
+    }
+  /*när man klickar på länkarna ... */
+  .linkstyle:active{
+    /*blå bakgrundfärg med låg opacity */
+    background-color: rgba(30, 139, 195,0.2) ;
+    /*vit skugga */
+    text-shadow: 0 0 2px #fff;
+    }
+```
+<div style="width:100%;height:0;padding-bottom:23%;position:relative;"><iframe src="https://giphy.com/embed/jtTyelrUD1MZgiJ4rm" width="100%" height="100%" style="position:absolute" frameBorder="0" allowFullScreen></iframe></div>
+
+</div>
+
+<a href="/devblog/blogg5" 
+  style='color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;'>
+        <button>Nästa Blogg</button>
+</a>

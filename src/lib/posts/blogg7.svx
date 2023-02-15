@@ -1,0 +1,173 @@
+---
+title: Det tredje arbetet med hemsidan
+
+---
+
+
+
+<p>
+under dagens lektion så tänkte vi förbättra utseendet på websidan dörfär så lade vi till estetiska saker för att få hemsidan att se mer profitionell, Vi kollade på <a style = " white-space:nowrap; padding:0; " href="https://colorhunt.co/">https://colorhunt.co/</a> för att hitta färger som skulle passa vår hemsida och 
+tillslut valde vi mörkblå och vit och röd som websidans huvudfärger och då ändrade vi färgerna, Vi tänkte dessutom att förbättra knapparna och länkarna och kom fram till att :hover var det vi behövde
+</p>
+<div class='box-style'>
+<h6 style='text-decoration:underline;'>Hover</h6>
+<p>
+Är till för att känna av när musen är ovanför objektet. Sedan så kan man lägga till saker som ska hända när musen är ovanför till exempel så kan man ha så att färgen ändras eller så att föremålet rör på sig.
+Man måste själv lägga till vad som ska ske och det enda den gör är att känna till om musen svävar ovanför objektet. 
+</p>
+<h6>Syntax:</h6>
+
+```css
+:hover {
+
+  /*some code*/
+
+  }
+
+```
+</div>
+
+<h3>Reyhaneh</h3>
+  <p> 
+  Jag tänkte att när man går över knappen så ska det kännas som att de är något man ska trycka på. Därför använde jag CSS-animationer för att utföra det där
+  med hjälp av <code style='color:#000000;'>transform: translateY(-10px); transition: transform 125ms;</code> vilket gjrode så att clicker button flyttades 10 pixlar uppåt med hastigheten 125ms när musen var över den. och det tyckte jag var snygg. 
+  </p>
+
+
+```css
+  /* när musen är över clicker-knappen*/  
+  .clicker:hover{
+      /*transition behöver 2 värden: namnet på saken vi vill ska animera och hur lång tid vi vill att det ska ta*/
+      transition: transform 125ms;
+      /*Gör så att clickern rör sig 10 pixlar uppåt*/
+      transform: translateY(-10px); 
+  }
+
+```
+<div class='box-style' style='margin-top:40px; margin-bottom:40px;'>
+    <h6 style='text-decoration:underline;'>Transition</h6>
+    <p>Ger en möjlighet att ändra animation på ett mjukt sätt, där man själv kan bestämma hur lång tid animationen ska ta. Istället för att förändringar sker omedelbart kan du få förändringarna att ske under en viss tid. Om du till exempel ändrar färgen på ett element från vitt till svart, är förändringen vanligtvis omedelbar. 
+    Men med transition sker förändringar med ett tidsintervall som följer en som har en viss acceleration. Som du själv kan bestämma, man kan själv välja vad som ska animeras, när den ska starta, hur länge det ska vara och och hur förändringen ska ske, typ att den ska ske fort i början men att den sedan ska ta lång tid på slutet.</p> 
+
+    <h6 style='text-decoration:underline;'>Transform</h6>
+    <p>Låter dig rotera, förstora, förminska och förflytta ett objekt</p>
+</div>
+  
+<p>Jag ville även att knappen ska tryckas in när man klickar på det.Det ordnade jag med hjälp av </p>
+
+```css
+ .clicker:active{
+    transform: scale(.96)
+  }
+```
+
+
+
+<style> 
+  
+p {
+    color: black;
+    font-family: 'Times New Roman';
+    font-style: italic;
+    font-size: 1em;
+    
+
+}
+.box-style{
+    background-color: #f0f7fb;
+    border: solid 1px #3498db;
+     border-radius: 6px;
+     line-height: 30px;
+     overflow: hidden;
+     padding: 15px 60px;
+     
+}
+.box-style p{
+  text-align: justify;
+  font-style: normal;
+}
+
+.video-wrapper{
+  padding: 10px;
+  flex: 50%;
+}
+.vid{
+ transform:  scale(1.1, 1.0);;
+ border-radius : 10px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+
+
+</style>
+
+
+  
+
+
+
+
+
+<h1>Måns</h1>
+<p>
+  Eftersom vi hade valt en mörkbakgrund så tyckte jag att det vore snygg om våra texter och knappar skulle kunne sticka ut lite mer. Trots att vi hade valt färgen vit för dem 
+  tyckte jag fortfarande att de inte tog uppmärksamhet som de skulle. därför använde jag <code style='color:#000;'>box-shadow</code> och <code style='color:#000;'>text-shadow</code> vilket gjorde så att texten och knapparna lyste.
+</p>
+
+<div class='box-style' style='margin-top:40px;'>
+    <h6 style='text-decoration:underline;'>Box-shadow</h6>
+    <p>Är en effekt som ger skugga till ramen runt ett objekt, man kan sätta flera olika skuggor om man skriver kommatecken. Skuggan runt ramen är beskriven som X- och Y-förskjutningar i förhållande till objektet, blurr och radius och färg.</p>
+
+    <h6 style='text-decoration:underline;'>Text-shadow</h6>
+    <p>Tillämper skugga i text genom att ange text-shadow. Skuggans placering anges i X- och Y-led (h-shadow, v-shadow) och parametrar som kan anges är blur (oskärpa) och color (färg).</p>
+</div>
+
+
+```css
+    /* när musen är över clicker-knappen*/
+      .clicker:hover{
+          /* Gör så att kanten lyser vitt*/
+          box-shadow: 0 5px 10px 0 white inset,0 5px 10px 0 white,
+          0 5px 50px 0 white inset,0 5px 50px 0 white;
+          /*Gör så att texten på det som står i .upgrade lyser och får en brun skugga runt sig*/
+          text-shadow: 0 0 5px brown;
+          /*transition behöver 2 värden: namnet på saken vi vill ska animera och hur lång tid vi vill att det ska ta*/
+          transition: transform 125ms;
+          /*Gör så att clickern rör sig 10 pixlar uppåt*/
+          transform: translateY(-10px);
+          }
+
+``` 
+<div class="flex-container">
+
+<div class="video-wrapper">
+  <iframe class='vid' width="350" height="400" src="https://www.youtube-nocookie.com/embed/V1iCdj4zdUY?playlist=V1iCdj4zdUY&loop=1&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0"  ></iframe>
+</div>
+<div class="video-wrapper">
+  <iframe class='vid' width="350" height="400" src="https://www.youtube.com/embed/14ovIhdHGtE?playlist=14ovIhdHGtE&loop=1&autoplay=1&mute=1&controls=0" title="YouTube video player" frameborder="0"  ></iframe>
+
+</div>
+</div>
+
+
+
+
+
+<a href="/devblog/blogg4" 
+  style='color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;'>
+        <button>Nästa Blogg</button>
+</a>

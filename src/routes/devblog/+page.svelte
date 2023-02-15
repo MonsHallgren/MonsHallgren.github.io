@@ -8,9 +8,11 @@
   
   <ul>
     {#each data.posts as post}
+    <p>{"/devblog/" + post.path}</p>
       <li>
         <h2>
           <a href={"/devblog/" + post.path}>
+
             {post.meta.title}
           </a>
         </h2>

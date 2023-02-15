@@ -1,0 +1,109 @@
+---
+title: Det andra arbetet med hemsidan
+
+---
+
+
+
+
+
+<style> 
+p {
+    color: black;
+    font-family: 'Times New Roman';
+    font-style: italic;
+    font-size: 1em;
+    
+
+}
+</style>
+
+<p>Hej, idag så har vi (Måns och Reyhaneh) börjat arbeta tillsammans på hemsidan. För att kunna arbeta tillsammans så behövde vi hitta en extension som tillhandahöll oss med de behoven. Vid en snabb sökning så hittade vi live share som var gjort av microsoft för vs studio code. Med den så kan ägaren tilldela filerna  men ett problem är att ägeren måste vara tillgänglig för att andra skulle kunna komma åt och redigera. Detta gör att vi kommer behöva bestämma tider då vi jobbar tillsammans och inte att vi kan jobba när vi vill. Däremot så gillade vi hur enkel den var.</p>
+
+
+<p> Den här dagen så arbetade vi enbart tillsammans alltså disskuterade koden och kom fram till lösningar tillsammans.</p>
+<p>
+  När vi klickade på worker och doubler, såg det ut som att priset på dem uppdaterades. Men när vi klickade på dem igen så minskades antalet clicks med samma värde som i början. Och vi kom fram till att det var en bugg.
+</p>
+
+<p>Vi gick igenom kodblocken och kom fram till att problemet log i följande raden.</p>
+
+
+
+```html
+<span>{upgrade.cost * worker_multiplier}</span>
+```
+
+<p style='margin-bottom:20px; margin-top:20px;'>
+<code style='color:#2f3033;'>upgrade.cost * worker_multiplier</code> gjorde så att den uppdaterade kostnaden visades. Men eftersom det inte fanns någon lika med tecken så ändrades inte värdet på <code style='color:#2f3033;'>upgrade.cost</code>. Med annat ord så sparades inte förändringarna.
+Ett annat problem med denna rad var att det gjorde så att det såg ut som att kostnaden på båda doubler och worker ökade. Alltså när vi klickade på till exempel worker så såg det ut som att kostanden på även doubler ökade.
+och det var inte något vi tyckte om. Dessutom så ville vi inte ha worker_multiplier och det räckte med att fördubbla kostnaden bara. 
+</p>
+
+<p>Det är vad vi gjorde med kodblocken. vi försökte även skriva kommentarer och förklara vad varjedel gör och vad vi adderade och kommenterade bort.</p>
+
+
+```js
+    <button
+          class="upgrade"
+          on:click={() => {
+            //om vi hade råd -->
+            if (clicks >= upgrade.cost) {
+              //om upgrade.multiplier inte var 0
+             // med andra ord om det var doubler som klickades utför ->
+              if (upgrade.multiplier) {
+                //fördubblar ppc varjegång doubler klicks
+                  multiplier = multiplier * upgrade.multiplier;
+
+
+                //minskar kostnaden från våra poäng
+                clicks -= upgrade.cost;
+
+
+                // fördubblar kostnaden för doubler varjegång det klickas (vi adderade)
+                upgrade.cost *= 2
+              }
+            //om varken upgrade.worker eller clicks inte var 0
+            // med andra ord om det var worker som klickades utför ->
+            // vi valde att ta bort clicks för vi hade kollat att det räckte i början
+            /*if (upgrade.worker && clicks) */
+             if (upgrade.worker) {
+                //följande randen är kommenterat då de inte har någon användning
+                /*worker_multiplier = worker_multiplier * 2;*/
+
+
+                //lägger till en ny string 'worker' i listan workers
+                workers = [upgrade.name, ...workers];
+
+
+                /* start "clicking" every 1000 ms */
+                setInterval(increment, 1000);
+                //minskar poängen med
+                clicks -= upgrade.cost;
+                // fördubblar kostnaden för worker varjegång det klickas (vi adderade)
+                upgrade.cost *= 2
+              }
+            } else {
+              alert("Click some more first!");
+            } }} >
+
+ ```
+```html
+          <span>{upgrade.name}</span>
+           <!--
+            vi kommenterade bort följande radet för det gjorde så att det såg ut som att upgrade.cost uppdaterades
+             för båda doubler och worker medans det egentligen inte uppdaterades för nån av dem
+           -->
+          <!--<span>{upgrade.cost * worker_multiplier}</span>--> 
+
+          <span>{upgrade.cost}</span>
+        </button>
+
+ ```
+
+<a href="/devblog/blogg3" 
+  style='color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;'>
+        <button>Nästa Blogg</button>
+</a>

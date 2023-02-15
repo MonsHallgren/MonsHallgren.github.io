@@ -1,0 +1,202 @@
+---
+title: Det sjätte arbetet med hemsidan
+
+---
+
+
+<h3>Reyhaneh</h3>
+<p>
+  När det inte finns tillräckligt många clicks för att köpa workers och boosters får man en error typ vilket säger att man ska klicka mer först. Alert boxen tyckte jag var för basic och såg ganska konstig ut
+  därför så tänkte jag att göra en egen alert box istället för att använda javascripts <code style='color:#000000;'>alert()</code>. För att göra detta så gjorde jag en  <code style='color:#000000;'>div</code> som jag sedan gömde 
+  och endast visade den när man klickade på knappar utan att ha tillräckligt många clicks.
+</p>
+
+<section style='display:flex; margin-bottom:0;'>
+    
+  <button id="Show-html" onclick="document.getElementById('Show-html').style.display='none';
+                                  document.getElementById('Hide-html').style.display='block'; 
+                                  document.getElementById('html-nav').style.display='block';
+                                  document.getElementById('Show-css').style.display='block'; 
+                                  document.getElementById('Hide-css').style.display='none'; 
+                                  document.getElementById('css-nav').style.display='none';
+                                  document.getElementById('Hide-html').style.backgroundColor='#096d9e';"> Visa HTML/JS koden 
+                                  <i class="fa-solid fa-file-code"></i>
+</button>
+
+
+
+
+  <button id="Hide-html" onclick="document.getElementById('Hide-html').style.display='none';
+                                  document.getElementById('Show-html').style.display='block';
+                                  document.getElementById('html-nav').style.display='none';
+                                  document.getElementById('Show-css').style.display='block'; 
+                                  document.getElementById('Hide-css').style.display='none';"> gömma HTML/JS koden
+                                  <i class="fa-solid fa-file-code"></i>
+  </button>
+
+
+
+  <button id="Show-css" onclick="document.getElementById('Show-css').style.display='none';
+                                document.getElementById('Hide-css').style.display='block';
+                                document.getElementById('css-nav').style.display='block'; 
+                                document.getElementById('Show-html').style.display='block';
+                                document.getElementById('Hide-html').style.display='none'; 
+                                document.getElementById('html-nav').style.display='none'
+                                document.getElementById('Hide-css').style.backgroundColor='#096d9e';"> Visa CSS koden
+                                <i class="fa-brands fa-css3-alt"></i>
+  </button>
+
+
+
+  <button id="Hide-css" onclick="document.getElementById('Hide-css').style.display='none';
+                                document.getElementById('Show-css').style.display='block';
+                                document.getElementById('css-nav').style.display='none'; 
+                                document.getElementById('Show-html').style.display='block'; 
+                                document.getElementById('Hide-css').style.display='none';"> gömma CSS koden
+                                <i class="fa-brands fa-css3-alt"></i>
+  </button>
+
+</section>
+<div id='html-nav' class ='div-style' style='display=none;margin-top:0; display:none;'>
+
+
+```html
+
+<!--här skapar vi en div med class namn och id alert och en till div med klass namn alert-contet och inuti dem en span med x som innehåll  -->
+<div id = 'alert' class="alert">
+<div  class="alert-content">
+  <!--om x klickas kommer förälder elemenet som är alert div försvinna/blir osynlig-->
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">X</span>
+    <strong>Click some more first!</strong> 
+</div>
+</div>
+```
+```js
+<div class="grid">
+      {#each upgrades as upgrade}
+        <button
+          class="upgrade"
+          id="upgrade"
+          on:click={() => {
+            /* om det finns tillräckligt mycket clicks för att täcka kostnaden */
+            if (clicks >= upgrade.cost) {
+             //some code 
+              } else { /*  om det inte finns tillräckligt mycket clicks för att täcka kostnaden */
+              document.getElementById('alert').style.display='block'; /* en div med id #alert som är från början gömd kommer synas */
+            }        
+            var alert = document.getElementById("alert"); /* skapar en variabel alert som innehåller det elementet som har #alert som id */
+            
+            var span = document.getElementsByClassName("closebtn")[0]; /* skapar en variabel span som innehåller det elementet som har .classbtn som classnamn */
+            
+            span.onclick = function() { /* om elementet med .closebtn blev klickad ... */
+              alert.style.display = "none";} /* den div som har #alert som id ska försvinna */
+            
+            window.onclick = function(event) {  /* om vad som helst i fönstret klickas  */
+              if (event.target == alert) {  /* om alert finns  */
+                alert.style.display = "none";  /* ska den div som innehåler #alert som id försvinna */
+              }}
+            window.onload = setInterval(() => alert.style.display='none', 10000) /* alert ska försvinna efter 10 sekunder */
+
+            }}>
+            
+          <span>{upgrade.name}</span>
+          <span>{upgrade.cost}</span>
+        </button>
+```
+</div>
+
+<div id='css-nav' class ='div-style' style='display=none;margin-top:0; display:none;'>
+
+```css
+
+    
+  .alert {
+  display: none; /* döljd från början */
+  position: fixed; /* Stanna på plats */
+  z-index: 1; /* sitter uppe */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full bredd */
+  height: 100%; /* Full höjd */
+  overflow: auto; /* sätt igång scroll vid behov */
+  animation-name: fadeIn; /* namn på animationen */
+  animation-duration: 0.4s; /*animationens längd*/
+  
+}
+
+.alert-content {
+  position: fixed;/* sitta fast */
+  bottom: 0;/* bestämmer en boxs nedre marginalkants förskjutning till ovanför den nedre kanten.  */
+  background-color: brown;/* Bestämmer bakgrundsfärgen, i det här fallet är bakgrundsfärgen brun */
+  width: 100%;/* Bredd */
+  animation-name: slideIn; /* Bestämmer animationen vi har valt den färdiga animationen slidein */
+  animation-duration: 0.4s; /*Här så bestämmer vi hur lång tid animationen ska ta */
+  color:#fff;/*Vi bestämer färgen på texten */
+  font-size: larger; /* Här så har vi sagt att storleken på texten ska vara större*/
+  padding:30px; /*Padding används för att skapa utrymme runt ett objekts innehåll */
+}
+
+
+
+.closebtn {
+  margin-left: 0px;/*ställa in värden för marginalområdets tjocklek */
+  color: white; 
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s; 
+  
+}
+/*när musen är över X kommer X bli svart */
+.closebtn:hover {
+  color: black;
+}
+
+```
+
+</div>
+<div>
+<strong>Så ser resultet ut : </strong>
+<div style="width:100%;height:0;padding-bottom:49%;position:relative;">
+<iframe src="https://giphy.com/embed/4kJBxnViECo68uXyHm" width="100%" height="100%" style="position:absolute" frameBorder="0" allowFullScreen></iframe>
+</div>
+
+
+</div>
+
+<style> 
+p {
+    color: #000;
+    font-family: 'Times New Roman' , cursive;
+    font-size: 1em;
+  
+
+
+}
+.div-style{
+    background-color: #f0f7fb;
+    border: solid 1px #3498db;
+     border-radius: 6px;
+     line-height: 30px;
+     overflow: hidden;
+     padding: 15px 60px;
+    
+
+     
+}
+#Hide-html,#Hide-css{
+  display:none;
+
+} #Hide-html,#Hide-css,#Show-html,#Show-css{
+  margin-bottom : 0;
+  flex:50%;
+  margin-left:1px;
+}
+
+
+
+
+</style>
+

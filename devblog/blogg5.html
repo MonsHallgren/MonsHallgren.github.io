@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-7d71157f.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg1-80421421.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg2-37aadcdb.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg3-356398f7.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg4-f5555b07.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg5-1564f943.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg7-25f7852c.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-4e6b0544.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-7f8e18c5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-c23e7332.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-91efb07b.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-084a6af9.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-85db950a.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-8eb38838.js"><!-- HEAD_svelte-1ytvkup_START --><link rel="stylesheet" href="/pico.min.css"><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script src="https://kit.fontawesome.com/91ed277111.js" crossorigin="anonymous"></script><style>body{
+      background-color: #0f032a;
+      margin : 0;
+      box-sizing:border-box;
+      margin: 0;
+      padding: 0;
+     
+      }
+
+   
+    nav {
+      background-color:#0f032a;
+      overflow:hidden;
+      scroll-behavior:smooth;
+    }
+
+
+    .nav_container {
+        height:calc(3em + 4px);}
+
+    #div-sec {
+          padding:calc(1em + 2px);
+          width:100vw;
+          
+        }
+    a {
+            border:solid 1px transparent;
+            padding:1em;
+            
+      }
+
+    
+          
+          
+        
+   
+
+  </style><!-- HEAD_svelte-1ytvkup_END -->
+	</head>
+	<body>
+		<div style="display: contents">
+
+
+
+
+
+
+<nav><div class="nav_container"><div id="div-sec"><a id="homepage" href="/#main" class="linkstyle">Hem</a>
+      <a id="homepage" href="#blogg_nav" class="linkstyle">Blogg</a></div>
+    <div id="div-sec"><a id="blogg_nav" href="/#homepage" class="linkstyle">Back</a>
+      <a href="/devblog/blogg1" class="linkstyle">Blogg 1</a>
+      <a href="/devblog/blogg2" class="linkstyle">Blogg 2</a>
+      <a href="/devblog/blogg3" class="linkstyle">Blogg 3</a>
+      <a href="/devblog/blogg4" class="linkstyle">Blogg 4</a>
+      <a href="/devblog/blogg5" class="linkstyle">Blogg 5</a>
+      <a href="/devblog/blogg6" class="linkstyle">Blogg 6</a></div></div></nav>
+
+<main class="container-fluid" id="main"><hr>
+
+  <main class="container">
+
+
+<article><h1>Det femte arbetet med hemsidan</h1>
+ 
+  <h3>Måns</h3>
+<div class="flex-container svelte-qsxs0d"><div class="flex-item-left svelte-qsxs0d"><p class="svelte-qsxs0d">Varjegång man  klickade på worker skapades en ny rektangel där det stod worker där nere på hemsidan.  Jag tänkte att det skulle vara roligt att byta ut 
+      rektanglarna till riktiga bilder på arbetare. Jag googlade lite, hittade och sparade denna bild för jag tyckte att det passade bra.
+      </p></div>
+  <div class="flex-item-right svelte-qsxs0d"><img src="https://i.ibb.co/q5bf7wm/minerpng.png" alt="minerpng" class="svelte-qsxs0d"></div></div>
+<p style="margin-top:15px; text-align:justify;" class="svelte-qsxs0d">Sedan kollade jag igenom koden och försökte hitta hur de där regtanglarna skapades. I koden så fanns det en lista som hette
+<code style="color:#000;">workers</code> och när man klickade på worker knappen så lades till en till sträng, &quot;worker&quot;, till listan. och sedan gick man genom workers listan skev ut dem på websidan och sedan lade till till lite css och gjorde dem till färgade rektanglar.</p>
+<div class="box-style svelte-qsxs0d">Här ser vi det relavanta kodblocken i den originella koden.
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token comment">/* definerar en tom lista */</span>
+    <span class="token keyword">let</span> workers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> upgrades <span class="token operator">=</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">cost</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Doubler"</span><span class="token punctuation">,</span> <span class="token literal-property property">multiplier</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">worker</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">cost</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Worker"</span><span class="token punctuation">,</span> <span class="token literal-property property">multiplier</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token literal-property property">worker</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+  <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"upgrade"</span> <span class="token literal-property property">on</span><span class="token operator">:</span>click<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">/*om upgrade.worker inte är 0 &#123;om man klickar på worker&#125; */</span>
+           <span class="token keyword">if</span> <span class="token punctuation">(</span>upgrade<span class="token punctuation">.</span>worker<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">/* upgrade.name vilket är "worker" läggs till workers listan */</span>
+            workers <span class="token operator">=</span> <span class="token punctuation">[</span>upgrade<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">...</span>workers<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">></span> 
+            
+            <span class="token comment">/*namn och kostnad på knapparna */</span>
+            <span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token punctuation">&#123;</span>upgrade<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+            <span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token punctuation">&#123;</span>upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+      <span class="token operator">&lt;</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>Workers<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+        <span class="token operator">&lt;</span>hr <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"shop"</span><span class="token operator">></span>
+        <span class="token comment">/*returnera varje item i workers listan som worker */</span>
+          <span class="token punctuation">&#123;</span>#each workers <span class="token keyword">as</span> worker<span class="token punctuation">&#125;</span>
+          <span class="token comment">/*skriv innehållet av worker variablet */</span>
+            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"worker"</span><span class="token operator">></span><span class="token punctuation">&#123;</span>worker<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+          <span class="token punctuation">&#123;</span><span class="token operator">/</span>each<span class="token punctuation">&#125;</span>
+       <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<pre class="language-css"><!-- HTML_TAG_START --><code class="language-css">  <span class="token selector">.shop</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+      <span class="token property">grid-auto-flow</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span> <span class="token comment">/* default */</span>
+      <span class="token property">gap</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span>
+      <span class="token property">grid-template-rows</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>3<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>3<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+   <span class="token selector">.worker</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>128<span class="token punctuation">,</span> 141<span class="token punctuation">,</span> 27<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">place-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">place-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+</code><!-- HTML_TAG_END --></pre>
+<p class="svelte-qsxs0d">Vilket leder till : </p>
+<img src="https://i.ibb.co/YPsByjf/Capture.png" alt="Capture" border="0" width="100%"></div>
+<p class="svelte-qsxs0d">För att fixa det tänkte jag att jag skulle kunna skapa en till lista  istället för 
+<code style="color:#000;">let workers = []</code> och istället för <code style="color:#000;">upgrade.name</code> skapa typ en <code style="color:#000;">upgrade.url</code>
+och sedan lägga till bildadressen till listan , gå igenom den och rita bilderna och sedan styla det med css. Detta krävde  förändringar i koden. </p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token comment">/* definerar en tom lista */</span>
+    <span class="token keyword">let</span> pictures <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> upgrades <span class="token operator">=</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">cost</span><span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Doubler"</span><span class="token punctuation">,</span> <span class="token literal-property property">multiplier</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">worker</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">cost</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Worker"</span><span class="token punctuation">,</span> <span class="token literal-property property">multiplier</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token literal-property property">worker</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">,</span> <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'src&#92;routes\img\minerpng.png'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+  <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"upgrade"</span> <span class="token literal-property property">on</span><span class="token operator">:</span>click<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">/*om upgrade.worker inte är 0 &#123;om man klickar på worker&#125; */</span>
+           <span class="token keyword">if</span> <span class="token punctuation">(</span>upgrade<span class="token punctuation">.</span>worker<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">/* upgrade.url vilket är adressen på bilden läggs till pictures listan */</span>
+           pictures<span class="token operator">=</span><span class="token punctuation">[</span>upgrade<span class="token punctuation">.</span>url<span class="token punctuation">,</span> <span class="token operator">...</span>pictures<span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">></span> 
+            
+            <span class="token comment">/*namn och kostnad på knapparna */</span>
+            <span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token punctuation">&#123;</span>upgrade<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+            <span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token punctuation">&#123;</span>upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+      <span class="token operator">&lt;</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>Workers<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+        <span class="token operator">&lt;</span>hr <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"shop"</span><span class="token operator">></span>
+        <span class="token comment">/*returnera varje item i pictures listan som picture */</span>
+          <span class="token punctuation">&#123;</span>#each pictures <span class="token keyword">as</span> picture<span class="token punctuation">&#125;</span>
+          <span class="token comment">/*rita bilderna */</span>
+            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"worker"</span><span class="token operator">></span><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token punctuation">&#123;</span>picture<span class="token punctuation">&#125;</span> alt<span class="token operator">=</span><span class="token string">"worker"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"worker_img"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+          <span class="token punctuation">&#123;</span><span class="token operator">/</span>each<span class="token punctuation">&#125;</span>
+       <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<pre class="language-css"><!-- HTML_TAG_START --><code class="language-css">  
+  <span class="token selector">.shop</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+    <span class="token property">grid-auto-flow</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span> <span class="token comment">/* default */</span>
+    <span class="token property">gap</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span> <span class="token comment">/*Bestämmer avståndet mellan olika objekt*/</span>
+    <span class="token property">grid-template-rows</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>3<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>3<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token punctuation">&#125;</span>
+   
+  <span class="token selector">.worker</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span> <span class="token comment">/* 10% margin uppifrån .worker */</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token comment">/* 100% bredd (full length) */</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span> <span class="token comment">/*90% höjd  av det riktiga höjden*/</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span> <span class="token comment">/* Gör att kanterna är genomskinliga */</span>
+    <span class="token property">place-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><span class="token comment">/* Gör så att bilden hamnar i mitten */</span>
+    <span class="token property">place-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token comment">/* Gör så content är centrerad */</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span> 
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.worker_img</span><span class="token punctuation">&#123;</span>
+    <span class="token property">will-change</span><span class="token punctuation">:</span> transform<span class="token punctuation">;</span> 
+    <span class="token property">transition</span><span class="token punctuation">:</span> transform 450ms<span class="token punctuation">;</span> <span class="token comment">/* bestämmer typen av animation och hur långt tid det tar */</span>
+
+  <span class="token punctuation">&#125;</span>
+  <span class="token selector">.worker_img:hover</span><span class="token punctuation">&#123;</span>
+    <span class="token property">transition</span><span class="token punctuation">:</span> transform 125ms<span class="token punctuation">;</span> <span class="token comment">/* bestämmer typen av animation och hur långt tid det tar */</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-10px<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/*Gör så att clickern rör sig 10 pixlar uppåt*/</span> 
+  <span class="token punctuation">&#125;</span>
+
+</code><!-- HTML_TAG_END --></pre>
+<p class="svelte-qsxs0d">Så ser resultet ut : </p>
+<img src="https://i.ibb.co/b2X7X2M/Capture.png" alt="Capture" border="0" width="100%">
+<a href="/devblog/blogg6" style="color: #ffffff; font-weight: bold; text-decoration: none;"><button>Nästa Blogg</button></a></article></main>
+</main>
+
+
+		<script type="module" data-sveltekit-hydrate="jeezvz">
+			import { start } from "../_app/immutable/start-4e6b0544.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="jeezvz"]').parentNode,
+				version: "1676475099602",
+				hydrate: {
+					node_ids: [0, 4],
+					data: [null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-7d71157f.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg1-80421421.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg2-37aadcdb.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg3-356398f7.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg4-f5555b07.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg5-1564f943.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg7-25f7852c.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-4e6b0544.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-7f8e18c5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-c23e7332.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-91efb07b.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-084a6af9.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-85db950a.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-8eb38838.js"><!-- HEAD_svelte-1ytvkup_START --><link rel="stylesheet" href="/pico.min.css"><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script src="https://kit.fontawesome.com/91ed277111.js" crossorigin="anonymous"></script><style>body{
+      background-color: #0f032a;
+      margin : 0;
+      box-sizing:border-box;
+      margin: 0;
+      padding: 0;
+     
+      }
+
+   
+    nav {
+      background-color:#0f032a;
+      overflow:hidden;
+      scroll-behavior:smooth;
+    }
+
+
+    .nav_container {
+        height:calc(3em + 4px);}
+
+    #div-sec {
+          padding:calc(1em + 2px);
+          width:100vw;
+          
+        }
+    a {
+            border:solid 1px transparent;
+            padding:1em;
+            
+      }
+
+    
+          
+          
+        
+   
+
+  </style><!-- HEAD_svelte-1ytvkup_END -->
+	</head>
+	<body>
+		<div style="display: contents">
+
+
+
+
+
+
+<nav><div class="nav_container"><div id="div-sec"><a id="homepage" href="/#main" class="linkstyle">Hem</a>
+      <a id="homepage" href="#blogg_nav" class="linkstyle">Blogg</a></div>
+    <div id="div-sec"><a id="blogg_nav" href="/#homepage" class="linkstyle">Back</a>
+      <a href="/devblog/blogg1" class="linkstyle">Blogg 1</a>
+      <a href="/devblog/blogg2" class="linkstyle">Blogg 2</a>
+      <a href="/devblog/blogg3" class="linkstyle">Blogg 3</a>
+      <a href="/devblog/blogg4" class="linkstyle">Blogg 4</a>
+      <a href="/devblog/blogg5" class="linkstyle">Blogg 5</a>
+      <a href="/devblog/blogg6" class="linkstyle">Blogg 6</a></div></div></nav>
+
+<main class="container-fluid" id="main"><hr>
+
+  <main class="container">
+
+
+<article><h1>Det första arbetet med hemsidan</h1>
+ 
+  <h3>Måns:</h3>
+<div style="margin:20px"><p class="svelte-n71l5i">Under dagens lektion så har jag börjat med att andra på formen på clickern och jag har också tagit bort bakgrundsbilderna och ersatt det med enbart färg.
+Jag har också ändrat så ju fler boosters man köper desto dyrare blir dem, samt sett hur man kan ändra hastigheten på workers.
+Jag har även gjort några av lektionerna för att lära sig svelte. 
+</p></div>
+<pre class="language-css"><!-- HTML_TAG_START --><code class="language-css">  <span class="token selector">.upgrade</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid <span class="token function">rgb</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>203<span class="token punctuation">,</span> 219<span class="token punctuation">,</span> 252<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+    <span class="token property">place-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">place-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.worker</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>241<span class="token punctuation">,</span> 187<span class="token punctuation">,</span> 223<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">place-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">place-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"> <span class="token keyword">if</span> <span class="token punctuation">(</span>clicks <span class="token operator">>=</span> upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>upgrade<span class="token punctuation">.</span>multiplier<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                multiplier <span class="token operator">=</span> multiplier <span class="token operator">*</span> upgrade<span class="token punctuation">.</span>multiplier<span class="token punctuation">;</span>
+                upgrade<span class="token punctuation">.</span>cost <span class="token operator">*=</span> <span class="token number">2</span>
+                clicks <span class="token operator">-=</span> upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">;</span>
+              <span class="token punctuation">&#125;</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>upgrade<span class="token punctuation">.</span>worker <span class="token operator">&amp;&amp;</span> clicks<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                worker_multiplier <span class="token operator">=</span> worker_multiplier <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">;</span>
+                workers <span class="token operator">=</span> <span class="token punctuation">[</span>upgrade<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">...</span>workers<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token comment">/* start "clicking" every 1000 ms */</span>
+                <span class="token function">setInterval</span><span class="token punctuation">(</span>increment<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                clicks <span class="token operator">-=</span> upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">;</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+              <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Not enough clicks"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<a href="/devblog/blogg2" style="color: #ffffff; font-weight: bold; text-decoration: none;"><button>Nästa Blogg</button></a></article></main>
+</main>
+
+
+		<script type="module" data-sveltekit-hydrate="1u91ozr">
+			import { start } from "../_app/immutable/start-4e6b0544.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="1u91ozr"]').parentNode,
+				version: "1676475099602",
+				hydrate: {
+					node_ids: [0, 4],
+					data: [null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>

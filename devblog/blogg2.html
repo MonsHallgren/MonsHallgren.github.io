@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-7d71157f.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg1-80421421.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg2-37aadcdb.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg3-356398f7.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg4-f5555b07.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg5-1564f943.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg7-25f7852c.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-4e6b0544.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-7f8e18c5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-c23e7332.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-91efb07b.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-084a6af9.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-85db950a.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-8eb38838.js"><!-- HEAD_svelte-1ytvkup_START --><link rel="stylesheet" href="/pico.min.css"><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script src="https://kit.fontawesome.com/91ed277111.js" crossorigin="anonymous"></script><style>body{
+      background-color: #0f032a;
+      margin : 0;
+      box-sizing:border-box;
+      margin: 0;
+      padding: 0;
+     
+      }
+
+   
+    nav {
+      background-color:#0f032a;
+      overflow:hidden;
+      scroll-behavior:smooth;
+    }
+
+
+    .nav_container {
+        height:calc(3em + 4px);}
+
+    #div-sec {
+          padding:calc(1em + 2px);
+          width:100vw;
+          
+        }
+    a {
+            border:solid 1px transparent;
+            padding:1em;
+            
+      }
+
+    
+          
+          
+        
+   
+
+  </style><!-- HEAD_svelte-1ytvkup_END -->
+	</head>
+	<body>
+		<div style="display: contents">
+
+
+
+
+
+
+<nav><div class="nav_container"><div id="div-sec"><a id="homepage" href="/#main" class="linkstyle">Hem</a>
+      <a id="homepage" href="#blogg_nav" class="linkstyle">Blogg</a></div>
+    <div id="div-sec"><a id="blogg_nav" href="/#homepage" class="linkstyle">Back</a>
+      <a href="/devblog/blogg1" class="linkstyle">Blogg 1</a>
+      <a href="/devblog/blogg2" class="linkstyle">Blogg 2</a>
+      <a href="/devblog/blogg3" class="linkstyle">Blogg 3</a>
+      <a href="/devblog/blogg4" class="linkstyle">Blogg 4</a>
+      <a href="/devblog/blogg5" class="linkstyle">Blogg 5</a>
+      <a href="/devblog/blogg6" class="linkstyle">Blogg 6</a></div></div></nav>
+
+<main class="container-fluid" id="main"><hr>
+
+  <main class="container">
+
+
+<article><h1>Det andra arbetet med hemsidan</h1>
+ 
+  <p class="svelte-qjp1b3">Hej, idag så har vi (Måns och Reyhaneh) börjat arbeta tillsammans på hemsidan. För att kunna arbeta tillsammans så behövde vi hitta en extension som tillhandahöll oss med de behoven. Vid en snabb sökning så hittade vi live share som var gjort av microsoft för vs studio code. Med den så kan ägaren tilldela filerna  men ett problem är att ägeren måste vara tillgänglig för att andra skulle kunna komma åt och redigera. Detta gör att vi kommer behöva bestämma tider då vi jobbar tillsammans och inte att vi kan jobba när vi vill. Däremot så gillade vi hur enkel den var.</p>
+<p class="svelte-qjp1b3">Den här dagen så arbetade vi enbart tillsammans alltså disskuterade koden och kom fram till lösningar tillsammans.</p>
+<p class="svelte-qjp1b3">När vi klickade på worker och doubler, såg det ut som att priset på dem uppdaterades. Men när vi klickade på dem igen så minskades antalet clicks med samma värde som i början. Och vi kom fram till att det var en bugg.
+</p>
+<p class="svelte-qjp1b3">Vi gick igenom kodblocken och kom fram till att problemet log i följande raden.</p>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>&#123;upgrade.cost * worker_multiplier&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<p style="margin-bottom:20px; margin-top:20px;" class="svelte-qjp1b3"><code style="color:#2f3033;">upgrade.cost * worker_multiplier</code> gjorde så att den uppdaterade kostnaden visades. Men eftersom det inte fanns någon lika med tecken så ändrades inte värdet på <code style="color:#2f3033;">upgrade.cost</code>. Med annat ord så sparades inte förändringarna.
+Ett annat problem med denna rad var att det gjorde så att det såg ut som att kostnaden på båda doubler och worker ökade. Alltså när vi klickade på till exempel worker så såg det ut som att kostanden på även doubler ökade.
+och det var inte något vi tyckte om. Dessutom så ville vi inte ha worker_multiplier och det räckte med att fördubbla kostnaden bara. 
+</p>
+<p class="svelte-qjp1b3">Det är vad vi gjorde med kodblocken. vi försökte även skriva kommentarer och förklara vad varjedel gör och vad vi adderade och kommenterade bort.</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">    <span class="token operator">&lt;</span>button
+          <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"upgrade"</span>
+          <span class="token literal-property property">on</span><span class="token operator">:</span>click<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//om vi hade råd --></span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>clicks <span class="token operator">>=</span> upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token comment">//om upgrade.multiplier inte var 0</span>
+             <span class="token comment">// med andra ord om det var doubler som klickades utför -></span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>upgrade<span class="token punctuation">.</span>multiplier<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//fördubblar ppc varjegång doubler klicks</span>
+                  multiplier <span class="token operator">=</span> multiplier <span class="token operator">*</span> upgrade<span class="token punctuation">.</span>multiplier<span class="token punctuation">;</span>
+
+
+                <span class="token comment">//minskar kostnaden från våra poäng</span>
+                clicks <span class="token operator">-=</span> upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">;</span>
+
+
+                <span class="token comment">// fördubblar kostnaden för doubler varjegång det klickas (vi adderade)</span>
+                upgrade<span class="token punctuation">.</span>cost <span class="token operator">*=</span> <span class="token number">2</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token comment">//om varken upgrade.worker eller clicks inte var 0</span>
+            <span class="token comment">// med andra ord om det var worker som klickades utför -></span>
+            <span class="token comment">// vi valde att ta bort clicks för vi hade kollat att det räckte i början</span>
+            <span class="token comment">/*if (upgrade.worker &amp;&amp; clicks) */</span>
+             <span class="token keyword">if</span> <span class="token punctuation">(</span>upgrade<span class="token punctuation">.</span>worker<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//följande randen är kommenterat då de inte har någon användning</span>
+                <span class="token comment">/*worker_multiplier = worker_multiplier * 2;*/</span>
+
+
+                <span class="token comment">//lägger till en ny string 'worker' i listan workers</span>
+                workers <span class="token operator">=</span> <span class="token punctuation">[</span>upgrade<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token operator">...</span>workers<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+
+                <span class="token comment">/* start "clicking" every 1000 ms */</span>
+                <span class="token function">setInterval</span><span class="token punctuation">(</span>increment<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//minskar poängen med</span>
+                clicks <span class="token operator">-=</span> upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">;</span>
+                <span class="token comment">// fördubblar kostnaden för worker varjegång det klickas (vi adderade)</span>
+                upgrade<span class="token punctuation">.</span>cost <span class="token operator">*=</span> <span class="token number">2</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+              <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Click some more first!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span> <span class="token operator">></span>
+</code><!-- HTML_TAG_END --></pre>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html">          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>&#123;upgrade.name&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+           <span class="token comment">&lt;!--
+            vi kommenterade bort följande radet för det gjorde så att det såg ut som att upgrade.cost uppdaterades
+             för båda doubler och worker medans det egentligen inte uppdaterades för nån av dem
+           --></span>
+          <span class="token comment">&lt;!--&lt;span>&#123;upgrade.cost * worker_multiplier&#125;&lt;/span>--></span> 
+
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>&#123;upgrade.cost&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+</code><!-- HTML_TAG_END --></pre>
+<a href="/devblog/blogg3" style="color: #ffffff; font-weight: bold; text-decoration: none;"><button>Nästa Blogg</button></a></article></main>
+</main>
+
+
+		<script type="module" data-sveltekit-hydrate="qjt89n">
+			import { start } from "../_app/immutable/start-4e6b0544.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="qjt89n"]').parentNode,
+				version: "1676475099602",
+				hydrate: {
+					node_ids: [0, 4],
+					data: [null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>

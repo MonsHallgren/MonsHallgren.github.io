@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-7d71157f.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg1-80421421.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg2-37aadcdb.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg3-356398f7.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg6-f5555b07.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg5-1564f943.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/blogg7-25f7852c.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-3f846d2a.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-7f8e18c5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-c23e7332.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-9143005f.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-084a6af9.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-f29d10a1.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-8e9617d8.js"><!-- HEAD_svelte-1ytvkup_START --><link rel="stylesheet" href="/pico.min.css"><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script src="https://kit.fontawesome.com/91ed277111.js" crossorigin="anonymous"></script><style>body{
+      background-color: #0f032a;
+      margin : 0;
+      box-sizing:border-box;
+      margin: 0;
+      padding: 0;
+     
+      }
+
+   
+    nav {
+      background-color:#0f032a;
+      overflow:hidden;
+      scroll-behavior:smooth;
+    }
+
+
+    .nav_container {
+        height:calc(3em + 4px);}
+
+    #div-sec {
+          padding:calc(1em + 2px);
+          width:100vw;
+          
+        }
+    a {
+            border:solid 1px transparent;
+            padding:1em;
+            
+      }
+
+    
+          
+          
+        
+   
+
+  </style><!-- HEAD_svelte-1ytvkup_END -->
+	</head>
+	<body>
+		<div style="display: contents">
+
+
+
+
+
+
+<nav><div class="nav_container"><div id="div-sec"><a id="homepage" href="/#main" class="linkstyle">Hem</a>
+      <a id="homepage" href="#blogg_nav" class="linkstyle">Blogg</a></div>
+    <div id="div-sec"><a id="blogg_nav" href="/#homepage" class="linkstyle">Back</a>
+      <a href="/devblog/blogg1" class="linkstyle">Blogg 1</a>
+      <a href="/devblog/blogg2" class="linkstyle">Blogg 2</a>
+      <a href="/devblog/blogg3" class="linkstyle">Blogg 3</a>
+      <a href="/devblog/blogg4" class="linkstyle">Blogg 4</a>
+      <a href="/devblog/blogg5" class="linkstyle">Blogg 5</a>
+      <a href="/devblog/blogg6" class="linkstyle">Blogg 6</a></div></div></nav>
+
+<main class="container-fluid" id="main"><hr>
+
+  <main class="container">
+
+
+<article><h1>Det sjätte arbetet med hemsidan</h1>
+ 
+  <h3>Reyhaneh</h3>
+<p class="svelte-1vreplr">När det inte finns tillräckligt många clicks för att köpa workers och boosters får man en error typ vilket säger att man ska klicka mer först. Alert boxen tyckte jag var för basic och såg ganska konstig ut
+  därför så tänkte jag att göra en egen alert box istället för att använda javascripts <code style="color:#000000;">alert()</code>. För att göra detta så gjorde jag en  <code style="color:#000000;">div</code> som jag sedan gömde 
+  och endast visade den när man klickade på knappar utan att ha tillräckligt många clicks.
+</p>
+<section style="display:flex; margin-bottom:0;"><button id="Show-html" onclick="document.getElementById('Show-html').style.display='none';
+                                  document.getElementById('Hide-html').style.display='block'; 
+                                  document.getElementById('html-nav').style.display='block';
+                                  document.getElementById('Show-css').style.display='block'; 
+                                  document.getElementById('Hide-css').style.display='none'; 
+                                  document.getElementById('css-nav').style.display='none';
+                                  document.getElementById('Hide-html').style.backgroundColor='#096d9e';" class="svelte-1vreplr">Visa HTML/JS koden 
+                                  <i class="fa-solid fa-file-code"></i></button>
+  <button id="Hide-html" onclick="document.getElementById('Hide-html').style.display='none';
+                                  document.getElementById('Show-html').style.display='block';
+                                  document.getElementById('html-nav').style.display='none';
+                                  document.getElementById('Show-css').style.display='block'; 
+                                  document.getElementById('Hide-css').style.display='none';" class="svelte-1vreplr">gömma HTML/JS koden
+                                  <i class="fa-solid fa-file-code"></i></button>
+  <button id="Show-css" onclick="document.getElementById('Show-css').style.display='none';
+                                document.getElementById('Hide-css').style.display='block';
+                                document.getElementById('css-nav').style.display='block'; 
+                                document.getElementById('Show-html').style.display='block';
+                                document.getElementById('Hide-html').style.display='none'; 
+                                document.getElementById('html-nav').style.display='none'
+                                document.getElementById('Hide-css').style.backgroundColor='#096d9e';" class="svelte-1vreplr">Visa CSS koden
+                                <i class="fa-brands fa-css3-alt"></i></button>
+  <button id="Hide-css" onclick="document.getElementById('Hide-css').style.display='none';
+                                document.getElementById('Show-css').style.display='block';
+                                document.getElementById('css-nav').style.display='none'; 
+                                document.getElementById('Show-html').style.display='block'; 
+                                document.getElementById('Hide-css').style.display='none';" class="svelte-1vreplr">gömma CSS koden
+                                <i class="fa-brands fa-css3-alt"></i></button></section>
+<div id="html-nav" class="div-style svelte-1vreplr" style="display=none;margin-top:0; display:none;"><pre class="language-html"><!-- HTML_TAG_START --><code class="language-html">
+<span class="token comment">&lt;!--här skapar vi en div med class namn och id alert och en till div med klass namn alert-contet och inuti dem en span med x som innehåll  --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">'</span>alert<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alert<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alert-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!--om x klickas kommer förälder elemenet som är alert div försvinna/blir osynlig--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>closebtn<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span>parentElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'none'</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>X<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Click some more first!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"grid"</span><span class="token operator">></span>
+      <span class="token punctuation">&#123;</span>#each upgrades <span class="token keyword">as</span> upgrade<span class="token punctuation">&#125;</span>
+        <span class="token operator">&lt;</span>button
+          <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"upgrade"</span>
+          id<span class="token operator">=</span><span class="token string">"upgrade"</span>
+          <span class="token literal-property property">on</span><span class="token operator">:</span>click<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">/* om det finns tillräckligt mycket clicks för att täcka kostnaden */</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>clicks <span class="token operator">>=</span> upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+             <span class="token comment">//some code </span>
+              <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span> <span class="token comment">/*  om det inte finns tillräckligt mycket clicks för att täcka kostnaden */</span>
+              document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'alert'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'block'</span><span class="token punctuation">;</span> <span class="token comment">/* en div med id #alert som är från början gömd kommer synas */</span>
+            <span class="token punctuation">&#125;</span>        
+            <span class="token keyword">var</span> alert <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"alert"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* skapar en variabel alert som innehåller det elementet som har #alert som id */</span>
+            
+            <span class="token keyword">var</span> span <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">"closebtn"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* skapar en variabel span som innehåller det elementet som har .classbtn som classnamn */</span>
+            
+            span<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">/* om elementet med .closebtn blev klickad ... */</span>
+              alert<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">"none"</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span> <span class="token comment">/* den div som har #alert som id ska försvinna */</span>
+            
+            window<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  <span class="token comment">/* om vad som helst i fönstret klickas  */</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>target <span class="token operator">==</span> alert<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  <span class="token comment">/* om alert finns  */</span>
+                alert<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">"none"</span><span class="token punctuation">;</span>  <span class="token comment">/* ska den div som innehåler #alert som id försvinna */</span>
+              <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+            window<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> alert<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'none'</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token comment">/* alert ska försvinna efter 10 sekunder */</span>
+
+            <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">></span>
+            
+          <span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token punctuation">&#123;</span>upgrade<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+          <span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token punctuation">&#123;</span>upgrade<span class="token punctuation">.</span>cost<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span></code><!-- HTML_TAG_END --></pre></div>
+<div id="css-nav" class="div-style svelte-1vreplr" style="display=none;margin-top:0; display:none;"><pre class="language-css"><!-- HTML_TAG_START --><code class="language-css">
+    
+  <span class="token selector">.alert</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token comment">/* döljd från början */</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token comment">/* Stanna på plats */</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span> <span class="token comment">/* sitter uppe */</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token comment">/* Full bredd */</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token comment">/* Full höjd */</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span> <span class="token comment">/* sätt igång scroll vid behov */</span>
+  <span class="token property">animation-name</span><span class="token punctuation">:</span> fadeIn<span class="token punctuation">;</span> <span class="token comment">/* namn på animationen */</span>
+  <span class="token property">animation-duration</span><span class="token punctuation">:</span> 0.4s<span class="token punctuation">;</span> <span class="token comment">/*animationens längd*/</span>
+  
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.alert-content</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span><span class="token comment">/* sitta fast */</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><span class="token comment">/* bestämmer en boxs nedre marginalkants förskjutning till ovanför den nedre kanten.  */</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> brown<span class="token punctuation">;</span><span class="token comment">/* Bestämmer bakgrundsfärgen, i det här fallet är bakgrundsfärgen brun */</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><span class="token comment">/* Bredd */</span>
+  <span class="token property">animation-name</span><span class="token punctuation">:</span> slideIn<span class="token punctuation">;</span> <span class="token comment">/* Bestämmer animationen vi har valt den färdiga animationen slidein */</span>
+  <span class="token property">animation-duration</span><span class="token punctuation">:</span> 0.4s<span class="token punctuation">;</span> <span class="token comment">/*Här så bestämmer vi hur lång tid animationen ska ta */</span>
+  <span class="token property">color</span><span class="token punctuation">:</span>#fff<span class="token punctuation">;</span><span class="token comment">/*Vi bestämer färgen på texten */</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> larger<span class="token punctuation">;</span> <span class="token comment">/* Här så har vi sagt att storleken på texten ska vara större*/</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>30px<span class="token punctuation">;</span> <span class="token comment">/*Padding används för att skapa utrymme runt ett objekts innehåll */</span>
+<span class="token punctuation">&#125;</span>
+
+
+
+<span class="token selector">.closebtn</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span><span class="token comment">/*ställa in värden för marginalområdets tjocklek */</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span> 
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> 0.3s<span class="token punctuation">;</span> 
+  
+<span class="token punctuation">&#125;</span>
+<span class="token comment">/*när musen är över X kommer X bli svart */</span>
+<span class="token selector">.closebtn:hover</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+</code><!-- HTML_TAG_END --></pre></div>
+<div><strong>Så ser resultet ut : </strong>
+<div style="width:100%;height:0;padding-bottom:49%;position:relative;"><iframe src="https://giphy.com/embed/4kJBxnViECo68uXyHm" width="100%" height="100%" style="position:absolute" frameborder="0" allowfullscreen></iframe></div></div></article></main>
+</main>
+
+
+		<script type="module" data-sveltekit-hydrate="qnkdhp">
+			import { start } from "../_app/immutable/start-3f846d2a.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="qnkdhp"]').parentNode,
+				version: "1676965183319",
+				hydrate: {
+					node_ids: [0, 4],
+					data: [null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>

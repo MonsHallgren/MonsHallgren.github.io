@@ -5,20 +5,53 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-		<link href="./_app/immutable/assets/_layout-8003c18b.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/_page-4b450774.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-a0ded0b7.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-efcbbb00.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-08392291.js">
+		<link href="./_app/immutable/assets/_layout-7d71157f.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page-463ec418.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-3f846d2a.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-7f8e18c5.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-c23e7332.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper-41c905a7.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-f6925622.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-9143005f.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-e4efcc1c.js"><!-- HEAD_svelte-1lc4dl3_START --><link rel="stylesheet" href="/pico.min.css"><style>nav {
-      margin-left: 10%;
-      margin-right: 10%;
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-43aa9606.js"><!-- HEAD_svelte-1ytvkup_START --><link rel="stylesheet" href="/pico.min.css"><script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script><script src="https://kit.fontawesome.com/91ed277111.js" crossorigin="anonymous"></script><style>body{
+      background-color: #0f032a;
+      margin : 0;
+      box-sizing:border-box;
+      margin: 0;
+      padding: 0;
+     
+      }
+
+   
+    nav {
+      background-color:#0f032a;
+      overflow:hidden;
+      scroll-behavior:smooth;
     }
-  </style><!-- HEAD_svelte-1lc4dl3_END -->
+
+
+    .nav_container {
+        height:calc(3em + 4px);}
+
+    #div-sec {
+          padding:calc(1em + 2px);
+          width:100vw;
+          
+        }
+    a {
+            border:solid 1px transparent;
+            padding:1em;
+            
+      }
+
+    
+          
+          
+        
+   
+
+  </style><!-- HEAD_svelte-1ytvkup_END -->
 	</head>
 	<body>
 		<div style="display: contents">
@@ -26,33 +59,46 @@
 
 
 
-<nav><ul><li><a href="/">Hem</a></li>
-    <li><a href="/devblog">Blog</a></li></ul></nav>
 
-<main class="container-fluid"><hr>
 
-  <main class="container"><article><header><div class="grid"><button class="upgrade svelte-10k15aq"><span>Doubler</span>
+<nav><div class="nav_container"><div id="div-sec"><a id="homepage" href="/#main" class="linkstyle">Hem</a>
+      <a id="homepage" href="#blogg_nav" class="linkstyle">Blogg</a></div>
+    <div id="div-sec"><a id="blogg_nav" href="/#homepage" class="linkstyle">Back</a>
+      <a href="/devblog/blogg1" class="linkstyle">Blogg 1</a>
+      <a href="/devblog/blogg2" class="linkstyle">Blogg 2</a>
+      <a href="/devblog/blogg3" class="linkstyle">Blogg 3</a>
+      <a href="/devblog/blogg4" class="linkstyle">Blogg 4</a>
+      <a href="/devblog/blogg5" class="linkstyle">Blogg 5</a>
+      <a href="/devblog/blogg6" class="linkstyle">Blogg 6</a></div></div></nav>
+
+<main class="container-fluid" id="main"><hr>
+
+  <main class="container"><div id="alert" class="alert svelte-q7lyk1"><div class="alert-content svelte-q7lyk1"><span class="closebtn svelte-q7lyk1" onclick="this.parentElement.style.display='none';">X</span> 
+    <strong>Click some more first!</strong></div></div>
+
+<article style="background-color: #0f032a ;"><header style="background-color: #0f032a ;"><div class="grid"><button class="upgrade svelte-q7lyk1" id="upgrade"><span>booster</span>
           <span>15</span>
-        </button><button class="upgrade svelte-10k15aq"><span>Worker</span>
+        </button><button class="upgrade svelte-q7lyk1" id="upgrade"><span>worker</span>
           <span>5</span>
         </button></div></header>
-  <div class="game svelte-10k15aq"><button class="clicker svelte-10k15aq"><span class="clicks svelte-10k15aq">100</span>
-      <span class="pointtext svelte-10k15aq">PPC: 1</span></button></div>
-  <footer><div class="panelright svelte-10k15aq"><div><span>Workers</span>
+    <div class="game svelte-q7lyk1"><div class="butt-container svelte-q7lyk1"><button class="clicker svelte-q7lyk1"><span class="clicks svelte-q7lyk1">100</span>
+        <span class="pointtext svelte-q7lyk1">PPC: 1</span></button></div></div>
+    <footer style="background-color: #0f032a;"><div class="panelright svelte-q7lyk1"><div><span class="worker_text svelte-q7lyk1">Workers</span>
         <hr>
-        <div class="shop svelte-10k15aq"></div></div>
+        <div class="shop svelte-q7lyk1"></div></div>
       <hr></div></footer>
-</article></main></main>
+</article></main>
+</main>
 
 
-		<script type="module" data-sveltekit-hydrate="1sm7wn5">
-			import { start } from "./_app/immutable/start-a0ded0b7.js";
+		<script type="module" data-sveltekit-hydrate="q9423g">
+			import { start } from "./_app/immutable/start-3f846d2a.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1sm7wn5"]').parentNode,
-				version: "1673304100546",
+				target: document.querySelector('[data-sveltekit-hydrate="q9423g"]').parentNode,
+				version: "1676965183319",
 				hydrate: {
 					node_ids: [0, 2],
 					data: [null,null],
